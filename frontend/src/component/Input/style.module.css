@@ -1,0 +1,115 @@
+.main {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .main h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .inputdiv {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  .inputdiv h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .fileGroup {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    font-size: 0.95rem;
+  }
+  
+  input[type='file'] {
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+  
+  button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    width: 100px;
+    /* height: fit-content; */
+    align-self: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .inputdiv {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .fileGroup {
+      width: 100%;
+    }
+  
+    input,
+    input[type='file'],
+    button {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+  
+    .main h2 {
+      font-size: 1.5rem;
+    }
+  
+    .inputdiv h2 {
+      font-size: 1.25rem;
+    }
+  }
+  
