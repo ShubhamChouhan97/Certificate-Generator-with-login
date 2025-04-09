@@ -1,27 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Input from './component/Input/index.jsx'
-import Table from './component/Tabel/index.jsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/SignUp";
+import MainPage from "./pages/Mainpage";
+import ProtectedRoute from "./component/ProtectedRoute";
+
 function App() {
-  const [showcerticatediv, setshowcerticatediv] = useState(true)
   return (
-  <div className='appmain'>
-    <div className="input">
-      <Input />
-    </div>
-{ showcerticatediv && 
-
-    <div className="genrated">
-    <h2>Generated Certificate</h2>
-    <div className="divtable">
-    <Table/>
-    </div>
-    </div>
-}
-  </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />} /> 
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<MainPage />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

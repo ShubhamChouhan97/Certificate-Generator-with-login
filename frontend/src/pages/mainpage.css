@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .appmain {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  .input {
+    border-radius: 20px;
+    margin: 30px;
+    width: auto;
+    height: 25%;
+    background-color: #f0f0f0;
+  }
+  .genrated{
+    border-radius: 20px;
+    margin: 30px;
+    width: auto;
+    height: auto;
+    max-height: 65%;
+    background-color: #f0f0f0;
+    margin-bottom: 0;
+  }
+  .genrated h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0; /* So it doesn't overlap with content behind it */
+    z-index: 1;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }

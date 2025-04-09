@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from './style.module.css';
 import { uploadFiles } from '../../API/upload.js';
 
-function Input() {
+function Input({ setLength }) {
   const [excelFile, setExcelFile] = useState(null);
   const [templateFile, setTemplateFile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,8 +18,8 @@ function Input() {
 
     try {
       const result = await uploadFiles(excelFile, templateFile); // Upload
-      alert("Files uploaded successfully!");
-      console.log(result);
+      const length = result.length;
+      setLength(length); // Correctly update parent's state
     } catch (error) {
       console.error("Upload error:", error);
       alert("An error occurred during upload.");

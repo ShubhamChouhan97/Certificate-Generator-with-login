@@ -1,0 +1,74 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .card {
+    padding: 40px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  .title {
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .inputGroup {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    /* padding: 10px; */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+  }
+  
+  .icon {
+    /* margin-right: 10px; */
+    font-size: 18px;
+  }
+  
+  .input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+  }
+  
+  .forgot {
+    color: #28a745;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .button {
+    background-color: #28e76a;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .signupText {
+    font-size: 14px;
+  }
+  
+  .signupLink {
+    color: #28a745;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
