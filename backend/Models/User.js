@@ -15,6 +15,19 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
+      batchIdInDb: [
+        { type: mongoose.Schema.Types.ObjectId,
+           ref: 'Batch', 
+           default: null 
+      }
+    ],
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+    {
+      timestamps: true,
     },
   );
 

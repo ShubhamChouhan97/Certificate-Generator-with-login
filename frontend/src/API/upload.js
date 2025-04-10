@@ -1,10 +1,12 @@
 export const uploadFiles = async (excelFile, templateFile) => {
     const formData = new FormData();
     const API_URL = import.meta.env.VITE_REACT_APP_SERVER_URL;
-
+    const id = localStorage.getItem('id');
+    const email = localStorage.getItem('email');
     formData.append('excelFile', excelFile);
     formData.append('templateFile', templateFile);
-  
+    formData.append('id', id);
+    formData.append('email', email);
     try {
       const response = await fetch(`${API_URL}/uploadfile/uploaddata`, {
         method: 'POST',

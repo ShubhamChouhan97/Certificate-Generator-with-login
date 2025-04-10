@@ -64,5 +64,20 @@
   .downall:hover {
     background-color: #0056b3;
   }
-  
+  .detail{
+    display: flex;
+     justify-content: space-between;
+  }
+  .detail h3{
+    margin: 0 30px 0 30px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0; /* So it doesn't overlap with content behind it */
+    z-index: 1;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
   

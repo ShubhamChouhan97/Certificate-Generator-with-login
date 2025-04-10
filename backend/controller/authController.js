@@ -61,8 +61,12 @@ const register = async (req, res) => {
                 sameSite: "None", // required for cross-site cookie usage
                 maxAge: 3600000, // 1 hour
             });
-    
-            res.json({ message: "Logged in successfully" });
+              const userData = {    
+                id: user._id,
+                userName: user.userName,
+                email: user.email,
+                };
+            res.json({ message: "Logged in successfully" ,userData});
         } catch (err) {
             console.error("Login error:", err);
             res.status(500).json({ message: "Server error" });

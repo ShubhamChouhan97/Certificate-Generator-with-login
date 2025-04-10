@@ -3,6 +3,9 @@ import Login from "./pages/Login";
 import Register from "./pages/SignUp";
 import MainPage from "./pages/Mainpage";
 import ProtectedRoute from "./component/ProtectedRoute";
+import Home from "./pages/Home";
+import BatchForm from "./pages/BatchDownload";
+import CertificateForm from "./pages/CertificateDownload";
 
 function App() {
   return (
@@ -10,8 +13,13 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} /> 
         <Route path="/register" element={<Register />} /> 
+
         <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<MainPage />} />
+        <Route path="/downloadcertificate" element={<CertificateForm />} />
+          <Route path="/mainpage" element={<MainPage />} />
+          <Route path="/downloadbatch" element={<BatchForm />} />
+          {/* <Route path="/" element={<MainPage />} /> */}
+          <Route path="/" element={<Home />} />
         </Route>
       </Routes>
     </Router>

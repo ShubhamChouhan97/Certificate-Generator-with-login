@@ -7,6 +7,8 @@ const http = require('http');
 const socketIo = require('socket.io');
 const uploadRoutes = require('./router/uploadfile.js');
 const authRoutes = require('./router/authRoutes.js');
+const downloadRoutes = require('./router/downloadRoutes.js');
+
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
@@ -35,7 +37,7 @@ app.set('io', io);
 
 app.use('/auth',authRoutes);
 app.use('/uploadfile', uploadRoutes);
-
+app.use('/download', downloadRoutes);
 app.get('/', (req, res) => {
   res.send('Hello');
 }   );

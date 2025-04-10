@@ -12,5 +12,13 @@ export const login = async (userData) => {
     if (!response.ok) {
         throw new Error(data.message || 'Login failed');
     }
+    const name = data.userData.userName;
+    const id = data.userData.id;
+    const email = data.userData.email;
+   // save to localstorage
+   localStorage.setItem('name', name);
+   localStorage.setItem('id', id);
+   localStorage.setItem('email', email);
+
     return data;
     };

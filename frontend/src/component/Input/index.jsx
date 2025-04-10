@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from './style.module.css';
 import { uploadFiles } from '../../API/upload.js';
 
-function Input({ setLength }) {
+function Input({ setLength ,setbatchId }) {
   const [excelFile, setExcelFile] = useState(null);
   const [templateFile, setTemplateFile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +19,9 @@ function Input({ setLength }) {
     try {
       const result = await uploadFiles(excelFile, templateFile); // Upload
       const length = result.length;
+      console.log("e",result)
+      const batchId = result.batchId;
+      setbatchId(batchId);
       setLength(length); // Correctly update parent's state
     } catch (error) {
       console.error("Upload error:", error);
