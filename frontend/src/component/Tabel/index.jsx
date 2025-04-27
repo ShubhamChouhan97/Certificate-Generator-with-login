@@ -15,7 +15,7 @@ function Table({length ,batchId}) {
   useEffect(() => {
     const handleCertificateGenerated = (cert) => {
       setCount((prev) => prev + 1);
-      console.log('Certificate created:', cert);
+    //  console.log('Certificate created:', cert);
       setCertificates((prev) => [...prev, cert]);
     };
   

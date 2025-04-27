@@ -19,7 +19,7 @@ function Home() {
   };
 
   const handleViewAllCertificates = () => {
-    console.log("View all generated certificates");
+   navigate('/viewall')
   };
 
   return (

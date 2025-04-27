@@ -19,6 +19,7 @@
     "dotenv": "^16.4.7",
     "easy-pdf-merge": "^0.2.6",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
     "libreoffice-convert": "^1.6.1",
     "lodash": "^4.17.21",

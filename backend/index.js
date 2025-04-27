@@ -8,6 +8,8 @@ const socketIo = require('socket.io');
 const uploadRoutes = require('./router/uploadfile.js');
 const authRoutes = require('./router/authRoutes.js');
 const downloadRoutes = require('./router/downloadRoutes.js');
+const allbatchRoutes = require('./router/allbatchRoutes.js')
+const session = require('express-session');
 
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
@@ -25,6 +27,13 @@ app.use(cors({
 app.use(express.static('public'));
 app.use(express.json());
 
+app.use(session({
+  secret: '123456', // important: keep it secret!
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // use 'secure: true' only if using HTTPS
+}));
+
 //make upload folder static
 app.use('/uploads', express.static('uploads'));
 const server = http.createServer(app);
@@ -38,6 +47,7 @@ app.set('io', io);
 app.use('/auth',authRoutes);
 app.use('/uploadfile', uploadRoutes);
 app.use('/download', downloadRoutes);
+app.use("/allbatch",allbatchRoutes);
 app.get('/', (req, res) => {
   res.send('Hello');
 }   );

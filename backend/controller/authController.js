@@ -54,7 +54,14 @@ const register = async (req, res) => {
             }
     
             const token = generateToken(user); // Assume this returns a valid JWT token
-    
+
+            // req.session.user = {
+            //     id: user._id,
+            //     email: user.email
+            //   };
+    req.session.userId = user._id; // Store user ID in session
+    req.session.email = user.email; // Store user name in session
+
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: true, // only send over HTTPS

@@ -111,7 +111,7 @@ const generateSingleCertificate = async ({ row, headers, index, templateContent,
 };
 
 // Main background task (one-by-one processing)
-const processCertificatesInBackground = async ({ headers, rows, templateContent, outputDir, io, batchId,newBatchId,userId }) => {
+const processCertificatesInBackground = async ({newBatch, headers, rows, templateContent, outputDir, io, batchId,newBatchId,userId }) => {
   let successCount = 0;
 
   for (let index = 0; index < rows.length; index++) {
@@ -129,13 +129,16 @@ const processCertificatesInBackground = async ({ headers, rows, templateContent,
 
     if (certInfo) successCount++;
   }
-
+ 
+  newBatch.count = successCount;
+  await newBatch.save();
   io.emit('batch-completed', {
     batchId,
     total: rows.length,
     success: successCount,
     failed: rows.length - successCount
   });
+  return successCount;
 };
 
 // Main  controller
@@ -174,8 +177,9 @@ const uploadFiles = async (req, res, next) => {
     });
 
     // Start background task
-    processCertificatesInBackground({ headers, rows, templateContent, outputDir, io, batchId ,newBatchId,userId});
-
+    processCertificatesInBackground({ newBatch,headers, rows, templateContent, outputDir, io, batchId ,newBatchId,userId});
+    user.batchCount++;
+    await user.save();
   } catch (error) {
     console.error('Certificate background processing error:', error);
     next(error);

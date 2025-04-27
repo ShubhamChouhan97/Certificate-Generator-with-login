@@ -7,6 +7,7 @@ export const DownloadCertificate = async (id) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ id }),
+    credentials: 'include',
   });
 
   if (!response.ok) {
@@ -29,5 +30,6 @@ link.remove();
 
 // Clean up
 window.URL.revokeObjectURL(url);
+
   alert("Download started");
 };

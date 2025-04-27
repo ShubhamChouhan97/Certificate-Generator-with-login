@@ -7,6 +7,7 @@ export const DownloadBatch = async (id) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ id }),
+    credentials: 'include',
   });
 
   if (!response.ok) {
@@ -22,5 +23,5 @@ export const DownloadBatch = async (id) => {
   document.body.appendChild(link);
   link.click();
   link.remove();
-  alert("Download started");
+  alert("Download Successfuly");
 };

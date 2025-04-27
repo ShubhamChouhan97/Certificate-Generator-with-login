@@ -8,7 +8,6 @@ function Mainpage() {
    const navigate = useNavigate();
   const [length, setLength] = useState(0);
    const [batchId, setbatchId] = useState('Null');
-console.log('length',length)
   const hometab = () => {
    navigate('/'); // Navigate to the Home component
   }

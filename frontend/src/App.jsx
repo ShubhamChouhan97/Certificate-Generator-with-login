@@ -6,6 +6,7 @@ import ProtectedRoute from "./component/ProtectedRoute";
 import Home from "./pages/Home";
 import BatchForm from "./pages/BatchDownload";
 import CertificateForm from "./pages/CertificateDownload";
+import Viewall from "./pages/viewall";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/downloadcertificate" element={<CertificateForm />} />
           <Route path="/mainpage" element={<MainPage />} />
           <Route path="/downloadbatch" element={<BatchForm />} />
+          <Route path="/viewall" element={<Viewall/>}/>
           {/* <Route path="/" element={<MainPage />} /> */}
           <Route path="/" element={<Home />} />
         </Route>

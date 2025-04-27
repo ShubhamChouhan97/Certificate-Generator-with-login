@@ -7,7 +7,7 @@ const archiver = require("archiver");
 const downloadBatchPath = async (req, res) => {
   try {
     const batchId = req.body.id;
-    console.log("Batch ID:", batchId);
+   // console.log("Batch ID:", batchId);
 
     const batch = await Batch.findOne({ batchId: batchId });
     if (!batch) {
@@ -15,7 +15,7 @@ const downloadBatchPath = async (req, res) => {
     }
 
     const folderPath = path.join(__dirname, "../", batch.folderPath);
-    console.log("Folder Path:", folderPath);
+   // console.log("Folder Path:", folderPath);
 
     // Check if directory exists
     if (!fs.existsSync(folderPath) || !fs.lstatSync(folderPath).isDirectory()) {
@@ -44,7 +44,7 @@ const downloadBatchPath = async (req, res) => {
 const downloadCertificate = async (req, res) => {
     try {
         const certifiacteId = req.body.id;
-        console.log("Certificate ID:", certifiacteId);
+      //  console.log("Certificate ID:", certifiacteId);
         // find the certificate in the database
         const certificate = await Certificate.findOne({ certificateId: certifiacteId });
         if (!certificate) {

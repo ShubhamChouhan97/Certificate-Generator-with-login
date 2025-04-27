@@ -11,6 +11,7 @@ export const uploadFiles = async (excelFile, templateFile) => {
       const response = await fetch(`${API_URL}/uploadfile/uploaddata`, {
         method: 'POST',
         body: formData,
+        credentials: 'include',
       });
   
       const result = await response.json();
